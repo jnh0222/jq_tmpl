@@ -1,0 +1,23 @@
+@charset "utf-8";
+/*gtris-button*/
+.gt-button { display: inline-block; padding: 0 12px; color: #666; background-color: #e6e6e6; border: 1px solid #bfbfbf; line-height: 31px; cursor: pointer; vertical-align: middle; font-size: 16px; overflow: visible; border-radius: 0px; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+.gt-button > i { margin-left: 2px; }
+.gt-button.gt-button-xsmall { font-size: 11px; line-height: 25px; }
+.gt-button.gt-button-small { font-size: 14px; line-height: 28px; }
+.gt-button.gt-button-large { font-size: 18px; line-height: 34px; }
+.gt-button.gt-button-xlarge { font-size: 22px; line-height: 40px; }
+.gt-button.gt-button:hover { color: #333; background: #fff; border: 1px solid #999; text-decoration: none; }
+.gt-button.gt-primary { color: #fff; background: #1cb841; }
+.gt-button.gt-primary:hover { color: #fff; background: #19a83b; }
+.gt-button.gt-error { color: #fff; background: #ca3c3c; }
+.gt-button.gt-error:hover { color: #fff; background: #b83636; }
+.gt-button.gt-warning { color: #fff; background: #ef5e00; }
+.gt-button.gt-warning:hover { color: #fff; background: #e35b03; }
+.gt-button.gt-secondary { color: #fff; background: #42b8dd; }
+.gt-button.gt-secondary:hover { color: #fff; background: #3ba6c8; }
+.gt-button.gt-button[disabled], .gt-button.gt-button-disabled, .gt-button.gt-button-disabled:hover, .gt-button.gt-button-disabled:focus, .gt-button.gt-button-disabled:active { color: #666; background-color: #e6e6e6; border: 1px solid #bfbfbf; cursor: not-allowed; opacity: 0.4; filter: alpha(opacity=40); }
+
+.gt-table { width: 100%; max-width: 100%; border-bottom: 1px solid #e0e0e0; }
+.gt-table > thead > tr > th, .gt-table > thead > tr > td, .gt-table > tbody > tr > th, .gt-table > tbody > tr > td { border-top: 1px solid #e0e0e0; }
+.gt-table > thead > tr > th, .gt-table > tbody > tr > th { padding: 15px 0; text-align: center; background: #fff; }
+.gt-table > thead > tr > td, .gt-table > tbody > tr > td { padding: 10px 0; text-align: center; background: #fff; }

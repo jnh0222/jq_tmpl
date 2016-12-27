@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" href="http://static.gabia.com/www/common/css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+		<title>jquery template demo</title>
+	</head>
+	<body>
+		<div class="wrap">
+			<button type="button" id="btn_load_data" class="gt-button">data load</button>
+			<table class="gt-table">
+				<caption></caption>
+				<colgroup><col style="width:60%"><col style="20%"><col style="20%"></colgroup>
+				<thead>
+					<tr>
+						<th scope="col">title</th>
+						<th scope="col">author</th>
+						<th scope="col">num</th>
+					</tr>
+				</thead>
+				<tbody id="table_body">
+					<!-- tableTmpl -->
+				</tbody>
+			</table>
+		</div>
+		<script type="text/javascript" src="https://static.gabia.com/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="/js/jquery.tmpl.js"></script>
+		<script type="text/javascript">
+				$("#btn_load_data").bind('click', function() {
+					//call ajax
+					$.ajax({
+						url: '/ajax/response.js',
+						error : function(xhr, status, error) {
+							console.error('xhr: ' + xhr + ', status: ' + status + ', error: ' + error);
+						},
+						beforeSend : function() {
+						},
+						success: function(response) {
+							$("#table_body").empty();
+							$("#tableTmpl").tmpl(response).appendTo("#table_body");
+						}
+					}).done(function(data) {
+					});
+				});
+			
+		</script>
+		
+		<!--template-->
+		<script id="tableTmpl" type="text/x-jquery-tmpl">
+		{{if response.length > 0}}
+			{{each(i, res) response}}
+			<tr>
+				<td>${res.title}</td>
+				{{if res.author == null}}
+					<td>anonymous</td>
+				{{else}}
+					<td>${res.author}</td>
+				{{/if}}
+				<td>${res.num}</td>
+			</tr>
+			{{/each}}
+		{{else}}
+			<tr>
+				<td colspan="3">no data</td>
+			</tr>
+		{{/if}}
+		</script>
+		
+	</body>
+</html>
